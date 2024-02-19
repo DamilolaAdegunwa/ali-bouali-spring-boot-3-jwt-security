@@ -9,8 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-
-import static com.alibou.security.user.Role.ADMIN;
+import static com.alibou.security.user.Role.ROLE_ADMIN;
 import static com.alibou.security.user.Role.MANAGER;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
@@ -44,7 +43,7 @@ public class SecurityApplication {
 					.lastname("Admin")
 					.email("admin@mail.com")
 					.password("password")
-					.role(ADMIN)
+					.role(ROLE_ADMIN)
 					.build();
 			System.out.println("Admin token: " + service.register(admin).getAccessToken());
 

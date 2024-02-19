@@ -39,6 +39,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     if (
             request.getServletPath().contains("/api/v1/auth")
             || request.getServletPath().contains("/api/v1/ping")
+            //|| request.getServletPath().contains("/api/v1/dummy")
         ) 
     {
       System.out.println("the request.getServletPath():: "+ request.getServletPath());
@@ -47,7 +48,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     }
     final String authHeader = request.getHeader("Authorization");
     final String jwt;
-    final String userEmail;
+    final String userEmail; 
     if (authHeader == null ||!authHeader.startsWith("Bearer ")) {
       filterChain.doFilter(request, response);
       return;

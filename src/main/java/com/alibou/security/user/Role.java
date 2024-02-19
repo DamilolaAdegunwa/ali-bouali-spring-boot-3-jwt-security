@@ -22,7 +22,7 @@ import static com.alibou.security.user.Permission.MANAGER_UPDATE;
 public enum Role {
 
   USER(Collections.emptySet()),
-  ADMIN(
+  ROLE_ADMIN(
           Set.of(
                   ADMIN_READ,
                   ADMIN_UPDATE,
